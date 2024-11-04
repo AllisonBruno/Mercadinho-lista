@@ -17,6 +17,7 @@ Fruta* alterarProduto(Fruta* lista, int codigo, const char* novoNome, int novaQt
 Fruta* excluirFruta(Fruta* lista, int codigo);
 Fruta* vendaFruta(Fruta* lista, int codigo, int quantidade);
 void salvaVendas(int codigo, const char* nome, int quantidade, double preco);
+void sair(Fruta* lista);
 
 void salvaVendas(int codigo, const char* nome, int quantidade, double preco){
 	FILE *arquivo = fopen("vendas.txt", "a");
@@ -148,6 +149,17 @@ Fruta* inserirLista(Fruta* lista, int codigo, const char* nome, int qtd, double 
 Fruta* criarLista(){
     return NULL;
 };
+
+void sair(Fruta* lista) {
+    Fruta* atual = lista;
+    while (atual != NULL) {
+        Fruta* temp = atual;
+        atual = atual->prox;
+        free(temp);
+    }
+    printf("Saindo do programa...\n");
+    exit(0);
+}
 
 
 

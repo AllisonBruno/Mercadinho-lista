@@ -59,7 +59,7 @@ int main() {
 	    atual = atual->prox;
 	}
     
-  
+    sair(listaFrutas);
 
     return 0;
 }
